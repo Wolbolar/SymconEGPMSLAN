@@ -1,0 +1,11 @@
+{
+  "id": "{0113804D-EE66-48B9-8FF8-F81E4A5BAAEB}",
+  "name": "EGPMSLAN",
+  "type": 3,
+  "vendor": "Energenie",
+  "aliases": [ "EG-PMS-LAN" ],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "EGPMSLAN"
+}

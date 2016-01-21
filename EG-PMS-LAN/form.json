@@ -1,0 +1,27 @@
+{
+  "elements": [
+    { "name": "Host", "type": "ValidationTextBox", "caption": "Host" },
+	{ "name": "Passwort", "type": "ValidationTextBox", "caption": "Passwort" },
+	{ "name": "UpdateInterval", "type": "IntervalBox", "caption": "Sekunden" }
+  ],
+  "actions": [
+    { "type": "Button", "label": "Einschalten Slot 1", "onClick": "EGPMSLAN_PowerOn($id, 1);" },
+    { "type": "Button", "label": "Ausschalten Slot 1", "onClick": "EGPMSLAN_PowerOff($id, 1);" },
+	{ "type": "Button", "label": "Einschalten Slot 2", "onClick": "EGPMSLAN_PowerOn($id, 2);" },
+    { "type": "Button", "label": "Ausschalten Slot 2", "onClick": "EGPMSLAN_PowerOff($id, 2);" },
+	{ "type": "Button", "label": "Einschalten Slot 3", "onClick": "EGPMSLAN_PowerOn($id, 3);" },
+    { "type": "Button", "label": "Ausschalten Slot 3", "onClick": "EGPMSLAN_PowerOff($id, 3);" },
+	{ "type": "Button", "label": "Einschalten Slot 4", "onClick": "EGPMSLAN_PowerOn($id, 4);" },
+    { "type": "Button", "label": "Ausschalten Slot 4", "onClick": "EGPMSLAN_PowerOff($id, 4);" }
+  ],
+  "status": [
+    { "code": 101, "icon": "inactive", "caption": "Instanz wird erstellt" },
+    { "code": 102, "icon": "active", "caption": "Instanz ist aktiv" },
+    { "code": 103, "icon": "inactive", "caption": "Instanz wird gelöscht" },
+    { "code": 104, "icon": "inactive", "caption": "Instanz ist inaktiv" },
+    { "code": 201, "icon": "error", "caption": "Instanz konnte keine Verbidnung aufbauen" },
+    { "code": 202, "icon": "error", "caption": "Instanz hat einen unbekannten Fehler erhalten" },
+	{ "code": 203, "icon": "error", "caption": "IP Adresse ist ungültig" },
+	{ "code": 204, "icon": "error", "caption": "Passwort Feld ist leer" }
+  ]
+}

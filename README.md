@@ -44,13 +44,13 @@ Mit Steckdosenleiste von EnerGenie EG-PMS-LAN läst sich über LAN anschließen,
  
 ## 5. Konfiguration:
 
-### aioGatewaySplitter:
+### EG-PMS-LAN:
 
 | Eigenschaft | Typ     | Standardwert | Funktion                           |
-| :---------: | :-----: | :----------: | :--------------------------------: |
-| Host        | string  |              | IP Adresse der Steckdosenleiste    |
-| Passwort    | string  |              | Passwort vom Webinterface          |
-
+| :-----------: | :-----: | :----------: | :--------------------------------: |
+| Host          | string  |              | IP Adresse der Steckdosenleiste    |
+| Passwort      | string  |              | Passwort vom Webinterface          |
+| Updateinterval| string  |              | Passwort vom Webinterface          |
 
 ## 7. Anhang
 

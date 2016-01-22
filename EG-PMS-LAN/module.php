@@ -286,41 +286,29 @@ class EGPMSLAN extends IPSModule
  	
 	public function PowerOn($slot)
 	{
-	$switchstate = $this->getStatus();
+	//$switchstate = $this->getStatus();
 	switch ($slot)
 		{
 			case 1:
 			$switchslots = array(
-					1 => self::ON,
-					2 => $switchstate[2],
-					3 => $switchstate[3],
-					4 => $switchstate[4]
+					1 => self::ON
 					);
 			break;
 			
 			case 2:
 			$switchslots = array(
-					1 => $switchstate[1],
-					2 => self::ON,
-					3 => $switchstate[3],
-					4 => $switchstate[4]
+					2 => self::ON
 					);
 			break;
 			
 			case 3:
 			$switchslots = array(
-					1 => $switchstate[1],
-					2 => $switchstate[2],
-					3 => self::ON,
-					4 => $switchstate[4]
+					3 => self::ON
 					);
 			break;
 			
 			case 4:
 			$switchslots = array(
-					1 => $switchstate[1],
-					2 => $switchstate[2],
-					3 => $switchstate[3],
 					4 => self::ON
 					);
 			break;
@@ -345,41 +333,29 @@ class EGPMSLAN extends IPSModule
 
 	public function PowerOff($slot)
 	{
-	$switchstate = $this->getStatus();
+	//$switchstate = $this->getStatus();
 	switch ($slot)
 		{
 			case 1:
 			$switchslots = array(
-					1 => self::OFF,
-					2 => $switchstate[2],
-					3 => $switchstate[3],
-					4 => $switchstate[4]
+					1 => self::OFF
 					);
 			break;
 			
 			case 2:
 			$switchslots = array(
-					1 => $switchstate[1],
-					2 => self::OFF,
-					3 => $switchstate[3],
-					4 => $switchstate[4]
+					2 => self::OFF
 					);
 			break;
 			
 			case 3:
 			$switchslots = array(
-					1 => $switchstate[1],
-					2 => $switchstate[2],
-					3 => self::OFF,
-					4 => $switchstate[4]
+					3 => self::OFF
 					);
 			break;
 			
 			case 4:
 			$switchslots = array(
-					1 => $switchstate[1],
-					2 => $switchstate[2],
-					3 => $switchstate[3],
 					4 => self::OFF
 					);
 			break;

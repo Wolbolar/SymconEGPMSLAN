@@ -214,13 +214,22 @@ class EGPMSLAN extends IPSModule
 	 */
 	protected function doSwitch($switches)
 		{
-		if ($this->Login())
+			if ($this->Login())
 			{
-			for ($i = 0; $i <= 3; $i++)
+			foreach($switches as $port => $state)
 				{
-				$params['cte'.($i+1)] = $switches[($i+1)];
+				$ports = array(1 => '', 2 => '', 3 => '', 4 => '');
+				$ports[$port] = $state;
+				$params = array();
+				foreach($ports as $port => $state)
+					{
+					if(in_array($state, array(self::ON, self::OFF)))
+			    		{
+						$params['cte'.$port] = $state;
+						}
+					}
+				$this->postRequest('http://'.$this->ReadPropertyString('Host'), $params);
 				}
-			$this->postRequest('http://'.$this->ReadPropertyString('Host'), $params);	
 			$this->Logout();
 			}
 		}

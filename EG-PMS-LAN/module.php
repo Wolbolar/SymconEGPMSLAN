@@ -170,7 +170,7 @@ class EGPMSLAN extends IPSModule
 			$states = explode(',', $matches[1][0]);
 			$this->Logout();
 			
-			return array(1=>$states[0], 2=>$states[1], 3=>$states[2], 4=>$states[3]);
+
 			if ($states[0] == 0)
 				{
 					SetValueBoolean($this->GetIDForIdent('STATE1'), true);
@@ -203,7 +203,7 @@ class EGPMSLAN extends IPSModule
 				{
 					SetValueBoolean($this->GetIDForIdent('STATE4'), false);
 				}		
-
+			return array(1=>$states[0], 2=>$states[1], 3=>$states[2], 4=>$states[3]);
 			}
 		else
 			return false;

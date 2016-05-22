@@ -173,35 +173,35 @@ class EGPMSLAN extends IPSModule
 
 			if ($states[0] == 0)
 				{
-					SetValueBoolean($this->GetIDForIdent('STATE1'), true);
+					SetValueBoolean($this->GetIDForIdent('STATE1'), false);
 				}
 			elseif ($states[0] == 1)
 				{
-					SetValueBoolean($this->GetIDForIdent('STATE1'), false);
+					SetValueBoolean($this->GetIDForIdent('STATE1'), true);
 				}
-			elseif ($states[1] == 0)
-				{
-					SetValueBoolean($this->GetIDForIdent('STATE2'), true);
-				}
-			elseif ($states[1] == 1)
+			if ($states[1] == 0)
 				{
 					SetValueBoolean($this->GetIDForIdent('STATE2'), false);
 				}
-			elseif ($states[2] == 0)
+			elseif ($states[1] == 1)
 				{
-					SetValueBoolean($this->GetIDForIdent('STATE3'), true);
+					SetValueBoolean($this->GetIDForIdent('STATE2'), true);
 				}
-			elseif ($states[2] == 1)
+			if ($states[2] == 0)
 				{
 					SetValueBoolean($this->GetIDForIdent('STATE3'), false);
 				}
-			elseif ($states[3] == 0)
+			elseif ($states[2] == 1)
 				{
-					SetValueBoolean($this->GetIDForIdent('STATE4'), true);
+					SetValueBoolean($this->GetIDForIdent('STATE3'), true);
+				}
+			if ($states[3] == 0)
+				{
+					SetValueBoolean($this->GetIDForIdent('STATE4'), false);
 				}
 			elseif ($states[3] == 1)
 				{
-					SetValueBoolean($this->GetIDForIdent('STATE4'), false);
+					SetValueBoolean($this->GetIDForIdent('STATE4'), true);
 				}		
 			return array(1=>$states[0], 2=>$states[1], 3=>$states[2], 4=>$states[3]);
 			}

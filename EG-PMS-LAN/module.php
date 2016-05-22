@@ -293,7 +293,7 @@ class EGPMSLAN extends IPSModule
 		}	
 
  	
-	public function PowerOn($slot)
+	public function PowerOn(integer $slot)
 	{
 	//$switchstate = $this->getStatus();
 	switch ($slot)
@@ -340,7 +340,7 @@ class EGPMSLAN extends IPSModule
 		}	
 	}
 
-	public function PowerOff($slot)
+	public function PowerOff(integer $slot)
 	{
 	//$switchstate = $this->getStatus();
 	switch ($slot)

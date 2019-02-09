@@ -235,7 +235,6 @@ class EGPMSLAN extends IPSModule
 		// configure
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, self::TIMEOUT);
-		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		//set the url, number of POST vars, POST data
 		curl_setopt($ch, CURLOPT_URL, $url);
 		//curl_setopt($ch, CURLOPT_USERAGENT, "IPSymcon");
@@ -267,7 +266,6 @@ class EGPMSLAN extends IPSModule
 		// configure
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, self::TIMEOUT);
-		curl_setopt($ch, CURLOPT_TIMEOUT_MS, self::TIMEOUT);
 		//set the url, number of POST vars, POST data
 		curl_setopt($ch, CURLOPT_URL, $url . ($fields_string != '' ? '?' . $fields_string : ''));
 

@@ -1,0 +1,29 @@
+{
+	"translations": {
+		"de": { 
+			"Host": "Host",
+			"Password": "Passwort",
+			"Seconds": "Sekunden",
+			"State Socket 1": "Status Dose 1",
+			"State Socket 2": "Status Dose 2",
+			"State Socket 3": "Status Dose 3",
+			"State Socket 4": "Status Dose 4",
+			"Turn On Socket 1": "Einschalten Slot 1",
+			"Turn Off Socket 1": "Ausschalten Slot 1",
+			"Turn On 2": "Einschalten Slot 2",
+			"Turn Off Socket 2": "Ausschalten Slot 2",
+			"Turn On 3": "Einschalten Slot 3",
+			"Turn Off Socket 3": "Ausschalten Slot 3",
+			"Turn On 4": "Einschalten Slot 4",
+			"Turn Off Socket 4": "Ausschalten Slot 4",
+			"Creating instance.": "Die Instanz wird erstellt.",
+			"instance active.": "Instanz ist aktiv.",
+			"deleting instance.": "Instanz wird gelöscht",
+			"interface closed.": "Interface geschlossen.",
+			"could not connect to device": "Instanz konnte keine Verbidnung aufbauen",
+			"unkown error": "Instanz hat einen unbekannten Fehler erhalten",
+			"IP adress is not valid": "IP Adresse ist ungültig",
+			"password must not be empty": "Passwort Feld ist leer"
+		}
+	}
+}

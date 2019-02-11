@@ -1,27 +1,27 @@
 {
   "elements": [
     { "name": "Host", "type": "ValidationTextBox", "caption": "Host" },
-	{ "name": "Passwort", "type": "ValidationTextBox", "caption": "Passwort" },
-	{ "name": "UpdateInterval", "type": "IntervalBox", "caption": "Sekunden" }
+	{ "name": "Passwort", "type": "ValidationTextBox", "caption": "Password" },
+	{ "name": "UpdateInterval", "type": "IntervalBox", "caption": "Seconds" }
   ],
   "actions": [
-    { "type": "Button", "label": "Einschalten Slot 1", "onClick": "EGPMSLAN_PowerOn($id, 1);" },
-    { "type": "Button", "label": "Ausschalten Slot 1", "onClick": "EGPMSLAN_PowerOff($id, 1);" },
-	{ "type": "Button", "label": "Einschalten Slot 2", "onClick": "EGPMSLAN_PowerOn($id, 2);" },
-    { "type": "Button", "label": "Ausschalten Slot 2", "onClick": "EGPMSLAN_PowerOff($id, 2);" },
-	{ "type": "Button", "label": "Einschalten Slot 3", "onClick": "EGPMSLAN_PowerOn($id, 3);" },
-    { "type": "Button", "label": "Ausschalten Slot 3", "onClick": "EGPMSLAN_PowerOff($id, 3);" },
-	{ "type": "Button", "label": "Einschalten Slot 4", "onClick": "EGPMSLAN_PowerOn($id, 4);" },
-    { "type": "Button", "label": "Ausschalten Slot 4", "onClick": "EGPMSLAN_PowerOff($id, 4);" }
+    { "type": "Button", "caption": "Turn On 1", "onClick": "EGPMSLAN_PowerOn($id, 1);" },
+    { "type": "Button", "caption": "Turn Off Socket 1", "onClick": "EGPMSLAN_PowerOff($id, 1);" },
+	{ "type": "Button", "caption": "Turn On 2", "onClick": "EGPMSLAN_PowerOn($id, 2);" },
+    { "type": "Button", "caption": "Turn Off Socket 2", "onClick": "EGPMSLAN_PowerOff($id, 2);" },
+	{ "type": "Button", "caption": "Turn On 3", "onClick": "EGPMSLAN_PowerOn($id, 3);" },
+    { "type": "Button", "caption": "Turn Off Socket 3", "onClick": "EGPMSLAN_PowerOff($id, 3);" },
+	{ "type": "Button", "caption": "Turn On 4", "onClick": "EGPMSLAN_PowerOn($id, 4);" },
+    { "type": "Button", "caption": "Turn Off Socket 4", "onClick": "EGPMSLAN_PowerOff($id, 4);" }
   ],
   "status": [
-    { "code": 101, "icon": "inactive", "caption": "Instanz wird erstellt" },
-    { "code": 102, "icon": "active", "caption": "Instanz ist aktiv" },
-    { "code": 103, "icon": "inactive", "caption": "Instanz wird gelöscht" },
-    { "code": 104, "icon": "inactive", "caption": "Instanz ist inaktiv" },
-    { "code": 201, "icon": "error", "caption": "Instanz konnte keine Verbidnung aufbauen" },
-    { "code": 202, "icon": "error", "caption": "Instanz hat einen unbekannten Fehler erhalten" },
-	{ "code": 203, "icon": "error", "caption": "IP Adresse ist ungültig" },
-	{ "code": 204, "icon": "error", "caption": "Passwort Feld ist leer" }
+    { "code": 101, "icon": "inactive", "caption": "Creating instance." },
+    { "code": 102, "icon": "active", "caption": "instance active." },
+    { "code": 103, "icon": "inactive", "caption": "deleting instance." },
+    { "code": 104, "icon": "inactive", "caption": "interface closed." },
+    { "code": 201, "icon": "error", "caption": "could not connect to device" },
+    { "code": 202, "icon": "error", "caption": "unkown error" },
+	{ "code": 203, "icon": "error", "caption": "IP adress is not valid" },
+	{ "code": 204, "icon": "error", "caption": "password must not be empty" }
   ]
 }

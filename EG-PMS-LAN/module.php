@@ -28,13 +28,13 @@ class EGPMSLAN extends IPSModule
 		}
 		$this->RegisterTimer('INTERVAL', $this->ReadPropertyInteger('UpdateInterval'), 'EGPMSLAN_getStatus($id)');
 
-		$state1 = $this->RegisterVariableBoolean("STATE1", "Status Dose 1", "~Switch", 1);
+		$this->RegisterVariableBoolean("STATE1", $this->Translate("State Socket 1"), "~Switch", 1);
 		$this->EnableAction("STATE1");
-		$state1 = $this->RegisterVariableBoolean("STATE2", "Status Dose 2", "~Switch", 1);
+		$this->RegisterVariableBoolean("STATE2", $this->Translate("State Socket 2"), "~Switch", 2);
 		$this->EnableAction("STATE2");
-		$state1 = $this->RegisterVariableBoolean("STATE3", "Status Dose 3", "~Switch", 1);
+		$this->RegisterVariableBoolean("STATE3", $this->Translate("State Socket 3"), "~Switch", 3);
 		$this->EnableAction("STATE3");
-		$state1 = $this->RegisterVariableBoolean("STATE4", "Status Dose 4", "~Switch", 1);
+		$this->RegisterVariableBoolean("STATE4", $this->Translate("State Socket 4"), "~Switch", 4);
 		$this->EnableAction("STATE4");
 	}
 	protected function RegisterTimer($ident, $interval, $script) {

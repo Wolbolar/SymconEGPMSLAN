@@ -7,7 +7,11 @@ class EGPMSLAN extends IPSModule
 		$this->RegisterPropertyString("Host", "");
 		$this->RegisterPropertyString("Passwort", "");
 		$this->RegisterPropertyInteger("UpdateInterval", 15);
+		$this->RegisterTimer("Update", 0, "EGPMSLAN_getStatus(' . $this->InstanceID . ');");
+		//we will wait until the kernel is ready
+		$this->RegisterMessage(0, IPS_KERNELMESSAGE);
 	}
+
 	public function ApplyChanges()
 	{
 		parent::ApplyChanges();
@@ -26,8 +30,7 @@ class EGPMSLAN extends IPSModule
 		{
 			$this->SetStatus(203); //IP Adresse ist ungültig
 		}
-		$this->RegisterTimer('INTERVAL', $this->ReadPropertyInteger('UpdateInterval'), 'EGPMSLAN_getStatus($id)');
-
+		
 		$this->RegisterVariableBoolean("STATE1", $this->Translate("State Socket 1"), "~Switch", 1);
 		$this->EnableAction("STATE1");
 		$this->RegisterVariableBoolean("STATE2", $this->Translate("State Socket 2"), "~Switch", 2);
@@ -36,30 +39,37 @@ class EGPMSLAN extends IPSModule
 		$this->EnableAction("STATE3");
 		$this->RegisterVariableBoolean("STATE4", $this->Translate("State Socket 4"), "~Switch", 4);
 		$this->EnableAction("STATE4");
+		$this->SetEGPMSLANTimerInterval();
 	}
-	protected function RegisterTimer($ident, $interval, $script) {
-		$id = @IPS_GetObjectIDByIdent($ident, $this->InstanceID);
-		if ($id && IPS_GetEvent($id)['EventType'] <> 1) {
-			IPS_DeleteEvent($id);
-			$id = 0;
-		}
-		if (!$id) {
-			$id = IPS_CreateEvent(1);
-			IPS_SetParent($id, $this->InstanceID);
-			IPS_SetIdent($id, $ident);
-		}
-		IPS_SetName($id, $ident);
-		IPS_SetHidden($id, true);
-		IPS_SetEventScript($id, "\$id = \$_IPS['TARGET'];\n$script;");
-		if (!IPS_EventExists($id)) throw new Exception("Ident with name $ident is used for wrong object type");
-		if (!($interval > 0)) {
-			IPS_SetEventCyclic($id, 0, 0, 0, 0, 1, 1);
-			IPS_SetEventActive($id, false);
-		} else {
-			IPS_SetEventCyclic($id, 0, 0, 0, 0, 1, $interval);
-			IPS_SetEventActive($id, true);
+
+	protected function SetEGPMSLANTimerInterval()
+	{
+		$update_interval = $this->ReadPropertyInteger('UpdateInterval');
+		$Interval = $update_interval * 1000;
+		$this->SetTimerInterval("Update", $Interval);
+	}
+
+	public function MessageSink($TimeStamp, $SenderID, $Message, $Data)
+	{
+
+		switch ($Message) {
+			case IM_CHANGESTATUS:
+				if ($Data[0] === IS_ACTIVE) {
+					$this->ApplyChanges();
+				}
+				break;
+
+			case IPS_KERNELMESSAGE:
+				if ($Data[0] === KR_READY) {
+					$this->ApplyChanges();
+				}
+				break;
+
+			default:
+				break;
 		}
 	}
+
 	public function RequestAction($ident, $value)
 	{
 		switch ($ident)

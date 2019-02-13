@@ -7,7 +7,7 @@ class EGPMSLAN extends IPSModule
 		$this->RegisterPropertyString("Host", "");
 		$this->RegisterPropertyString("Passwort", "");
 		$this->RegisterPropertyInteger("UpdateInterval", 15);
-		$this->RegisterTimer("Update", 0, "EGPMSLAN_getStatus(' . $this->InstanceID . ');");
+		$this->RegisterTimer("Update", 0, "EGPMSLAN_getStatus(" . $this->InstanceID . ");");
 		//we will wait until the kernel is ready
 		$this->RegisterMessage(0, IPS_KERNELMESSAGE);
 	}

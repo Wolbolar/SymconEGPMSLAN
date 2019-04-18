@@ -7,7 +7,7 @@ class EGPMSLAN extends IPSModule
 		$this->RegisterPropertyString("Host", "");
 		$this->RegisterPropertyString("Passwort", "");
 		$this->RegisterPropertyInteger("UpdateInterval", 15);
-		$this->RegisterTimer("Update", 0, "EGPMSLAN_getStatus(" . $this->InstanceID . ");");
+		$this->RegisterTimer("Update", 0, "EGPMSLAN_getState(" . $this->InstanceID . ");");
 		//we will wait until the kernel is ready
 		$this->RegisterMessage(0, IPS_KERNELMESSAGE);
 	}
@@ -157,7 +157,7 @@ class EGPMSLAN extends IPSModule
 	}
 
 	//Get State
-	public function getStatus()
+	public function getState()
 	{
 		if ($this->Login())
 		{
@@ -291,7 +291,7 @@ class EGPMSLAN extends IPSModule
 
 	public function PowerOn(int $slot)
 	{
-		//$switchstate = $this->getStatus();
+		//$switchstate = $this->getState();
 		switch ($slot)
 		{
 			case 1:
@@ -337,7 +337,7 @@ class EGPMSLAN extends IPSModule
 	}
 	public function PowerOff(int $slot)
 	{
-		//$switchstate = $this->getStatus();
+		//$switchstate = $this->getState();
 		switch ($slot)
 		{
 			case 1:

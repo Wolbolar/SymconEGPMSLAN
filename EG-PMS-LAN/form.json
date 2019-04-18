@@ -5,13 +5,13 @@
 	{ "name": "UpdateInterval", "type": "IntervalBox", "caption": "Seconds" }
   ],
   "actions": [
-    { "type": "Button", "caption": "Turn On 1", "onClick": "EGPMSLAN_PowerOn($id, 1);" },
+    { "type": "Button", "caption": "Turn On Socket 1", "onClick": "EGPMSLAN_PowerOn($id, 1);" },
     { "type": "Button", "caption": "Turn Off Socket 1", "onClick": "EGPMSLAN_PowerOff($id, 1);" },
-	{ "type": "Button", "caption": "Turn On 2", "onClick": "EGPMSLAN_PowerOn($id, 2);" },
+	{ "type": "Button", "caption": "Turn On Socket 2", "onClick": "EGPMSLAN_PowerOn($id, 2);" },
     { "type": "Button", "caption": "Turn Off Socket 2", "onClick": "EGPMSLAN_PowerOff($id, 2);" },
-	{ "type": "Button", "caption": "Turn On 3", "onClick": "EGPMSLAN_PowerOn($id, 3);" },
+	{ "type": "Button", "caption": "Turn On Socket 3", "onClick": "EGPMSLAN_PowerOn($id, 3);" },
     { "type": "Button", "caption": "Turn Off Socket 3", "onClick": "EGPMSLAN_PowerOff($id, 3);" },
-	{ "type": "Button", "caption": "Turn On 4", "onClick": "EGPMSLAN_PowerOn($id, 4);" },
+	{ "type": "Button", "caption": "Turn On Socket 4", "onClick": "EGPMSLAN_PowerOn($id, 4);" },
     { "type": "Button", "caption": "Turn Off Socket 4", "onClick": "EGPMSLAN_PowerOff($id, 4);" }
   ],
   "status": [

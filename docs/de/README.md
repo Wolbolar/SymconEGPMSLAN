@@ -14,6 +14,7 @@ Modul für IP-Symcon ab Version 4. Ermöglicht das Senden von Befehlen an die St
 4. [Funktionsreferenz](#4-funktionsreferenz)
 5. [Konfiguration](#5-konfiguartion)  
 6. [Anhang](#6-anhang)  
+7. [Versions-Historie](#7-versions-historie)
 
 ## 1. Funktionsumfang
 
@@ -133,3 +134,8 @@ Ausschalten des Steckdosenports $Port (1,2,3,4)
 #### EGPMSLAN:
 
 GUID: `{0113804D-EE66-48B9-8FF8-F81E4A5BAAEB}` 
+
+## 7. Versions-Historie
+
+- 1.1 @ 10.06.2019 17:57<br>
+  - HTTP-Requests wurden ohne TIMEOUT durchgeführt

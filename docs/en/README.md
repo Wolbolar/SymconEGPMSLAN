@@ -14,6 +14,7 @@ Module for IP Symcon Version 4 or higher. Allows you to send commands to the Gem
 4. [Function reference](#4-functionreference)
 5. [Configuration](#5-configuration)
 6. [Annex](#6-annex)
+7. [Version-History](#7-version-history)
 
 ## 1. Features
 
@@ -134,3 +135,8 @@ Switching off the socket port $Port (1,2,3,4)
 #### EGPMSLAN:
 
 GUID: `{0113804D-EE66-48B9-8FF8-F81E4A5BAAEB}` 
+
+## 7. Version History
+
+- 1.1 @ 10.06.2019 17:57<br>
+  - HTTP requests were made without TIMEOUT
